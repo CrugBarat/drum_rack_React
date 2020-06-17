@@ -4,7 +4,7 @@ import {SoundArray} from '../config/SoundArray.js';
 import SoundSelect from '../components/SoundSelect';
 
 
-class Metronome extends Component {
+class DrumRack extends Component {
   constructor() {
     super();
 
@@ -49,14 +49,22 @@ class Metronome extends Component {
   render() {
     return (
       <Fragment>
-        <h1>{this.state.bpm} bpm</h1>
-        <button onClick={this.onReduceBPM}>-</button>
-        <button onClick={this.onStartStop}>Start/Stop</button>
-        <button onClick={this.onIncreaseBPM}>+</button>
-        <SoundSelect sounds={this.state.sounds} onSoundSelect={this.handleSoundSelect}/>
+        <div className="drum-rack-container">
+          <div className="bpm-container">
+            <h1>{this.state.bpm} bpm</h1>
+          </div>
+          <div className="button-container">
+            <button onClick={this.onReduceBPM}>-</button>
+            <button onClick={this.onStartStop}>Start/Stop</button>
+            <button onClick={this.onIncreaseBPM}>+</button>
+          </div>
+          <div>
+            <SoundSelect sounds={this.state.sounds} onSoundSelect={this.handleSoundSelect}/>
+          </div>
+        </div>
       </Fragment>
     )
   }
 }
 
-export default Metronome;
+export default DrumRack;

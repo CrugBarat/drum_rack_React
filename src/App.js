@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
-import Metronome from './containers/Metronome';
+import DrumRack from './containers/DrumRack';
 
 function App() {
   return (
     <div>
-      <Metronome/>
-      <Metronome/>
-      <Metronome/>
-      <Metronome/>
-      <Metronome/>
+      <h1 className="title">Drum Rack</h1>
+      <DrumRack/>
+      <DrumRack/>
+      <DrumRack/>
+      <DrumRack/>
+      <DrumRack/>
     </div>
 
   );
