@@ -7,14 +7,21 @@ class Metronome extends Component {
 
     this.state = {
       bpm: 90,
-      sound: new Audio(sound)
+      sound: new Audio(sound),
+      playing: false
     }
 
     this.onButtonClick = this.onButtonClick.bind(this);
   }
 
   onButtonClick() {
-    setInterval(() => this.state.sound.play(), (60000/this.state.bpm));
+    if(this.state.playing === false) {
+      this.intervalID = setInterval(() => this.state.sound.play(), (60000/this.state.bpm));
+      this.setState({playing: true})
+    } else {
+      clearInterval(this.intervalID);
+      this.setState({playing: false});
+    }
   }
 
   render() {
