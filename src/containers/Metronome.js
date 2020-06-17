@@ -11,10 +11,12 @@ class Metronome extends Component {
       playing: false
     }
 
-    this.onButtonClick = this.onButtonClick.bind(this);
+    this.onStartStop = this.onStartStop.bind(this);
+    this.onReduceBPM = this.onReduceBPM.bind(this);
+    this.onIncreaseBPM = this.onIncreaseBPM.bind(this);
   }
 
-  onButtonClick() {
+  onStartStop() {
     if(this.state.playing === false) {
       this.intervalID = setInterval(() => this.state.sound.play(), (60000/this.state.bpm));
       this.setState({playing: true})
@@ -24,11 +26,23 @@ class Metronome extends Component {
     }
   }
 
+  onReduceBPM() {
+    let bpm = this.state.bpm;
+    this.setState({bpm: bpm - 1});
+  }
+
+  onIncreaseBPM() {
+    let bpm = this.state.bpm;
+    this.setState({bpm: bpm + 1});
+  }
+
   render() {
     return (
       <Fragment>
-        <h1>{this.state.bpm}</h1>
-        <button onClick={this.onButtonClick}>Start/Stop</button>
+        <h1>{this.state.bpm} bpm</h1>
+        <button onClick={this.onReduceBPM}>-</button>
+        <button onClick={this.onStartStop}>Start/Stop</button>
+        <button onClick={this.onIncreaseBPM}>+</button>
       </Fragment>
     )
   }
