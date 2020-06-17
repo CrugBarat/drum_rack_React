@@ -1,8 +1,5 @@
 export const SoundArray = [
                               {
-                                name: 'tick'
-                              },
-                              {
                                 name: 'beep'
                               },
                               {
@@ -19,5 +16,24 @@ export const SoundArray = [
                               },
                               {
                                 name: 'glug'
+                              },
+                              {
+                                name: 'kick'
+                              },
+                              {
+                                name: 'hat'
+                              },
+                              {
+                                name: 'tom'
+                              },
+                              {
+                                name: 'chatter'
+                              },
+                              {
+                                name: 'zap'
+                              },
+                              {
+                                name: 'hloop'
                               }
+
                             ]
