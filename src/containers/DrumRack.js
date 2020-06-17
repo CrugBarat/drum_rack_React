@@ -53,7 +53,7 @@ class DrumRack extends Component {
           <div className="bpm-container">
             <h1>{this.state.bpm} bpm</h1>
           </div>
-          <div className="button-container">
+          <div>
             <button onClick={this.onReduceBPM}>-</button>
             <button onClick={this.onStartStop}>Start/Stop</button>
             <button onClick={this.onIncreaseBPM}>+</button>
