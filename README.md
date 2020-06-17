@@ -1,4 +1,4 @@
-<img src="https://github.com/CrugBarat/my_files/blob/master/drums/drum1.png" height="450"> <img src="https://github.com/CrugBarat/my_files/blob/master/drums/drum2.png" height="450">
+<img src="https://github.com/CrugBarat/my_files/blob/master/drums/drum1.png" height="300"> <img src="https://github.com/CrugBarat/my_files/blob/master/drums/drum2.png" height="300">
 
 # Drum Rack
 
