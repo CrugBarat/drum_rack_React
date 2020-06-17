@@ -1,5 +1,8 @@
 import React, {Component, Fragment} from 'react';
-import sound from '../assets/audio/sound.wav';
+import getSound from '../helpers/soundMap.js';
+import {SoundArray} from '../config/SoundArray.js';
+import SoundSelect from '../components/SoundSelect';
+
 
 class Metronome extends Component {
   constructor() {
@@ -7,13 +10,15 @@ class Metronome extends Component {
 
     this.state = {
       bpm: 90,
-      sound: new Audio(sound),
-      playing: false
+      sound: null,
+      playing: false,
+      sounds: SoundArray
     }
 
     this.onStartStop = this.onStartStop.bind(this);
     this.onReduceBPM = this.onReduceBPM.bind(this);
     this.onIncreaseBPM = this.onIncreaseBPM.bind(this);
+    this.handleSoundSelect = this.handleSoundSelect.bind(this);
   }
 
   onStartStop() {
@@ -36,6 +41,11 @@ class Metronome extends Component {
     this.setState({bpm: bpm + 1});
   }
 
+  handleSoundSelect(name) {
+    let sound = getSound(name);
+    this.setState({sound: new Audio(sound)});
+  }
+
   render() {
     return (
       <Fragment>
@@ -43,6 +53,7 @@ class Metronome extends Component {
         <button onClick={this.onReduceBPM}>-</button>
         <button onClick={this.onStartStop}>Start/Stop</button>
         <button onClick={this.onIncreaseBPM}>+</button>
+        <SoundSelect sounds={this.state.sounds} onSoundSelect={this.handleSoundSelect}/>
       </Fragment>
     )
   }
