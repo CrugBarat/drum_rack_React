@@ -10,8 +10,8 @@ const SoundSelect = (props) => {
   }
 
   return (
-    <select onChange={handleChange}>
-      <option disabled>Choose a Competition</option>
+    <select onChange={handleChange} defaultValue="default">
+      <option value="default" disabled>Sounds</option>
       {options}
     </select>
   )
