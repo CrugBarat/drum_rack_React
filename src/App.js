@@ -11,6 +11,7 @@ function App() {
       <DrumRack/>
       <DrumRack/>
       <DrumRack/>
+      <DrumRack/>
     </div>
 
   );
